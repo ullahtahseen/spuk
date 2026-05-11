@@ -80,3 +80,5 @@ The form on `/contact.html` currently uses a `mailto:` fallback — submitting o
 ## License
 
 © Security Projects UK Limited. All rights reserved.
+
+© Security Projects UK Limited. All rights reserved.

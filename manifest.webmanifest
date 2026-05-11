@@ -1,0 +1,27 @@
+{
+  "name": "Security Projects UK Limited",
+  "short_name": "Security Projects UK",
+  "description": "SIA Approved Contractor delivering security and facilities management across London, Essex and the Home Counties.",
+  "lang": "en-GB",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0c2547",
+  "categories": ["business", "security", "facilities"],
+  "icons": [
+    {
+      "src": "/assets/images/favicon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/logo.png",
+      "sizes": "1480x448",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

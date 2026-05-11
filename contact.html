@@ -114,7 +114,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="enquire">
   <div class="container">
     <div class="contact-grid">
       <form class="contact-form" data-mailto novalidate>
@@ -143,12 +143,33 @@
           <div class="form-group">
             <label for="service">Service of interest</label>
             <select id="service" name="service">
-              <option>Security Guards</option>
-              <option>Hotel Security</option>
-              <option>Retail Security</option>
-              <option>Mobile Patrol</option>
-              <option>CCTV &amp; Access Control</option>
-              <option>Key Holding &amp; Alarm Response</option>
+              <optgroup label="Security">
+                <option>Security Guards</option>
+                <option>Hotel Security</option>
+                <option>Retail Security</option>
+                <option>Mobile Patrol</option>
+                <option>CCTV &amp; Access Control</option>
+                <option>CCTV Monitoring</option>
+                <option>Key Holding &amp; Alarm Response</option>
+                <option>Concierge</option>
+                <option>Front House Officers</option>
+                <option>Vacant Property Security</option>
+                <option>Industrial Gates &amp; Fencing</option>
+                <option>Fire Wardens</option>
+                <option>Waking Watch</option>
+                <option>Canine Security</option>
+              </optgroup>
+              <optgroup label="Facilities Management">
+                <option>Integrated Facilities Services</option>
+                <option>Office Cleaning</option>
+                <option>Grounds Maintenance</option>
+                <option>Window Cleaning</option>
+                <option>Washroom Hygiene</option>
+                <option>Carpet Cleaning</option>
+                <option>Property Management Cleaning</option>
+                <option>Shopping Centre &amp; Retail Cleaning</option>
+                <option>Pest Control</option>
+              </optgroup>
               <option>Not sure — please advise</option>
             </select>
           </div>
@@ -236,127 +257,35 @@
   </div>
 </section>
 
-<!-- Service coverage map -->
+<!-- Service coverage list -->
 <section class="section" id="locations">
-  <div class="container" style="text-align:center;">
-    <span class="eyebrow">Our locations</span>
-    <h2 style="margin-bottom:14px;">Coverage across the United Kingdom</h2>
-    <p class="lede" style="max-width:640px; margin:0 auto 40px;">From our Essex and Gateshead bases we deploy teams to sixteen cities across England, Scotland and Wales — with national coverage available on contract.</p>
-
-    <div class="uk-map-wrap">
-      <svg class="uk-map" viewBox="0 0 480 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="uk-map-title uk-map-desc">
-        <title id="uk-map-title">Service coverage across the United Kingdom</title>
-        <desc id="uk-map-desc">A stylised map of the United Kingdom highlighting sixteen cities where Security Projects UK Limited delivers services. Office locations in Rainham (Essex) and Gateshead (Tyne and Wear) are marked separately.</desc>
-
-        <!-- Great Britain mainland (simplified silhouette) -->
-        <path class="uk-map__land" d="
-          M 270,28
-          L 290,40
-          L 305,65
-          L 318,100
-          L 312,135
-          L 302,160
-          L 300,190
-          L 308,225
-          L 318,260
-          L 330,300
-          L 340,335
-          L 356,365
-          L 380,395
-          L 392,430
-          L 392,460
-          L 380,485
-          L 395,510
-          L 410,535
-          L 408,560
-          L 395,585
-          L 372,600
-          L 345,612
-          L 315,615
-          L 285,613
-          L 255,615
-          L 220,620
-          L 188,625
-          L 170,612
-          L 178,592
-          L 200,580
-          L 222,565
-          L 200,548
-          L 175,528
-          L 160,505
-          L 158,480
-          L 175,460
-          L 192,440
-          L 200,408
-          L 215,378
-          L 225,345
-          L 222,310
-          L 208,285
-          L 218,255
-          L 208,220
-          L 215,185
-          L 200,155
-          L 215,128
-          L 232,98
-          L 250,62
-          Z" />
-
-        <!-- Northern Ireland -->
-        <path class="uk-map__land" d="
-          M 88,310
-          C 75,308 60,318 58,338
-          C 58,358 70,378 90,386
-          C 112,390 132,378 138,358
-          C 142,338 130,318 112,312
-          C 102,308 95,308 88,310 Z" />
-
-        <!-- City pins (small) -->
-        <g class="uk-map__pins">
-          <!-- Pulse for offices -->
-          <circle class="uk-map__pulse" cx="305" cy="245" r="8"/>
-          <circle class="uk-map__pulse" cx="385" cy="545" r="8"/>
-
-          <!-- Office pins (Newcastle = North Office, London = Head Office region) -->
-          <g class="uk-map__city uk-map__city--office">
-            <circle class="uk-map__pin uk-map__pin--office" cx="305" cy="245" r="8"/>
-            <text class="uk-map__label uk-map__label--office" x="318" y="249">Newcastle</text>
-          </g>
-          <g class="uk-map__city uk-map__city--office">
-            <circle class="uk-map__pin uk-map__pin--office" cx="385" cy="545" r="8"/>
-            <text class="uk-map__label uk-map__label--office" x="398" y="549">London</text>
-          </g>
-
-          <!-- Scotland -->
-          <g class="uk-map__city"><circle class="uk-map__pin" cx="298" cy="100" r="5"/><text class="uk-map__label" x="310" y="104">Aberdeen</text></g>
-          <g class="uk-map__city"><circle class="uk-map__pin" cx="235" cy="172" r="5"/><text class="uk-map__label" x="170" y="176" text-anchor="end">Glasgow</text></g>
-          <g class="uk-map__city"><circle class="uk-map__pin" cx="278" cy="183" r="5"/><text class="uk-map__label" x="290" y="187">Edinburgh</text></g>
-
-          <!-- North & Midlands England -->
-          <g class="uk-map__city"><circle class="uk-map__pin" cx="338" cy="350" r="5"/><text class="uk-map__label" x="350" y="354">Hull</text></g>
-          <g class="uk-map__city"><circle class="uk-map__pin" cx="298" cy="358" r="5"/><text class="uk-map__label" x="232" y="362" text-anchor="end">Leeds</text></g>
-          <g class="uk-map__city"><circle class="uk-map__pin" cx="268" cy="388" r="5"/><text class="uk-map__label" x="202" y="392" text-anchor="end">Manchester</text></g>
-          <g class="uk-map__city"><circle class="uk-map__pin" cx="318" cy="425" r="5"/><text class="uk-map__label" x="330" y="429">Nottingham</text></g>
-          <g class="uk-map__city"><circle class="uk-map__pin" cx="278" cy="465" r="5"/><text class="uk-map__label" x="212" y="469" text-anchor="end">Birmingham</text></g>
-          <g class="uk-map__city"><circle class="uk-map__pin" cx="345" cy="505" r="5"/><text class="uk-map__label" x="358" y="509">Milton Keynes</text></g>
-
-          <!-- Wales -->
-          <g class="uk-map__city"><circle class="uk-map__pin" cx="248" cy="548" r="5"/><text class="uk-map__label" x="262" y="552">Cardiff</text></g>
-          <g class="uk-map__city"><circle class="uk-map__pin" cx="212" cy="545" r="5"/><text class="uk-map__label" x="148" y="549" text-anchor="end">Swansea</text></g>
-
-          <!-- South West & South -->
-          <g class="uk-map__city"><circle class="uk-map__pin" cx="282" cy="552" r="5"/><text class="uk-map__label" x="218" y="572" text-anchor="end">Bristol</text></g>
-          <g class="uk-map__city"><circle class="uk-map__pin" cx="338" cy="588" r="5"/><text class="uk-map__label" x="350" y="592">Southampton</text></g>
-          <g class="uk-map__city"><circle class="uk-map__pin" cx="305" cy="605" r="5"/><text class="uk-map__label" x="240" y="609" text-anchor="end">Dorchester</text></g>
-        </g>
-      </svg>
-
-      <div class="uk-map__legend">
-        <span class="uk-map__legend-item"><span class="uk-map__dot uk-map__dot--office"></span> Our offices</span>
-        <span class="uk-map__legend-item"><span class="uk-map__dot"></span> Service coverage</span>
-      </div>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Our locations</span>
+      <h2>Coverage across the United Kingdom</h2>
+      <p class="lede">From our Essex and Gateshead bases we deploy teams to sixteen cities across England, Scotland and Wales — with national coverage available on contract.</p>
     </div>
 
-    <p style="margin-top:30px; font-size:.95rem; color:var(--color-text-soft);">Don't see your city? National coverage is available on contract — <a href="contact.html" style="color:var(--color-gold-dark); font-weight:600;">talk to us</a>.</p>
+    <ul class="coverage-list" aria-label="Cities served by Security Projects UK">
+      <li class="coverage-list__item">Aberdeen</li>
+      <li class="coverage-list__item">Birmingham</li>
+      <li class="coverage-list__item">Bristol</li>
+      <li class="coverage-list__item">Cardiff</li>
+      <li class="coverage-list__item">Dorchester</li>
+      <li class="coverage-list__item">Edinburgh</li>
+      <li class="coverage-list__item">Glasgow</li>
+      <li class="coverage-list__item">Hull</li>
+      <li class="coverage-list__item">Leeds</li>
+      <li class="coverage-list__item coverage-list__item--office">London <span class="coverage-list__tag">Head Office</span></li>
+      <li class="coverage-list__item">Manchester</li>
+      <li class="coverage-list__item">Milton Keynes</li>
+      <li class="coverage-list__item coverage-list__item--office">Newcastle <span class="coverage-list__tag">North Office</span></li>
+      <li class="coverage-list__item">Nottingham</li>
+      <li class="coverage-list__item">Southampton</li>
+      <li class="coverage-list__item">Swansea</li>
+    </ul>
+
+    <p style="text-align:center; margin-top:32px; font-size:.95rem; color:var(--color-text-soft);">Don't see your city? National coverage is available on contract — <a href="#enquire" style="color:var(--color-gold-dark); font-weight:600;">send us a brief</a>.</p>
   </div>
 </section>
 

@@ -1848,12 +1848,12 @@ iframe { max-width: 100%; }
   flex: 1;
 }
 .tile__eyebrow {
-  font-size: .72rem;
-  letter-spacing: .14em;
+  font-size: 1.05rem;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-gold-dark);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 .tile__title {
   font-family: var(--font-display);

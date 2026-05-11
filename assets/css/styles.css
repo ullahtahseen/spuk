@@ -1600,6 +1600,133 @@ iframe { max-width: 100%; }
 .logo-strip-item svg { width: 22px; height: 22px; color: var(--color-gold-dark); }
 
 /* ============================================
+   Contact — dual maps + UK coverage map
+   ============================================ */
+.contact-maps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.contact-map {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: #fff;
+}
+.contact-map iframe {
+  border: 0;
+  display: block;
+  width: 100%;
+}
+.contact-map figcaption {
+  padding: 14px 18px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--color-navy);
+  text-align: left;
+  background: #fff;
+  border-top: 1px solid var(--color-border);
+}
+@media (max-width: 760px) {
+  .contact-maps { grid-template-columns: 1fr; }
+}
+
+.uk-map-wrap {
+  position: relative;
+  max-width: 580px;
+  margin: 0 auto;
+}
+.uk-map {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.uk-map__land {
+  fill: #eaeff6;
+  stroke: #c2cfdf;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+.uk-map__pin {
+  fill: var(--color-gold);
+  stroke: #fff;
+  stroke-width: 2;
+  transition: fill .2s ease, stroke-width .2s ease;
+}
+.uk-map__pin--office {
+  fill: var(--color-navy);
+  stroke: var(--color-gold);
+  stroke-width: 2.5;
+}
+.uk-map__city:hover .uk-map__pin {
+  fill: var(--color-gold-dark);
+}
+.uk-map__city--office:hover .uk-map__pin--office {
+  fill: var(--color-navy-dark);
+}
+.uk-map__label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  fill: var(--color-navy);
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+}
+.uk-map__label--office { font-weight: 700; }
+.uk-map__pulse {
+  fill: var(--color-gold);
+  opacity: .35;
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: uk-pulse 2.6s cubic-bezier(.66, 0, 0, 1) infinite;
+}
+@keyframes uk-pulse {
+  0%   { transform: scale(1);   opacity: .55; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+.uk-map__legend {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.uk-map__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .88rem;
+  font-weight: 500;
+  color: var(--color-text-soft);
+}
+.uk-map__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--color-border);
+}
+.uk-map__dot--office {
+  background: var(--color-navy);
+  border-color: var(--color-gold);
+  box-shadow: none;
+}
+@media (max-width: 600px) {
+  .uk-map__label { font-size: 11px; stroke-width: 3; }
+  .uk-map__legend { gap: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .uk-map__pulse { animation: none; }
+}
+
+/* ============================================
    WhatsApp floating button
    ============================================ */
 .wa-float {

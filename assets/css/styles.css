@@ -177,7 +177,7 @@ p { margin: 0 0 1em; color: var(--color-text-soft); }
 .brand {
   display: inline-block;
   width: 200px;
-  height: 48px;
+  height: 66px;
   background: url('../images/logo.png') left center / contain no-repeat;
   font-size: 0;
   line-height: 0;
@@ -185,17 +185,17 @@ p { margin: 0 0 1em; color: var(--color-text-soft); }
 }
 .brand-mark,
 .brand-text { display: none !important; }
-/* Footer puts the logo on a white pill so the navy mark stays legible on dark bg. */
+/* Footer puts the logo on a white pill — keep the navy gears + wordmark legible on the dark band. */
 .site-footer .brand {
   background-color: #fff;
   background-image: url('../images/logo.png');
-  background-position: 12px center;
-  background-size: calc(100% - 24px) auto;
+  background-position: center;
+  background-size: 85% auto;
   background-repeat: no-repeat;
-  width: 220px;
-  height: 56px;
+  width: 240px;
+  height: 82px;
   padding: 0;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 .brand-mark--legacy {
   width: 40px; height: 40px;
@@ -1050,8 +1050,8 @@ iframe { max-width: 100%; }
 
   /* Header */
   .header-bar { padding: 12px 0; gap: 12px; }
-  .brand { width: 160px; height: 40px; gap: 0; font-size: 0; }
-  .site-footer .brand { width: 180px; height: 48px; }
+  .brand { width: 168px; height: 56px; gap: 0; font-size: 0; }
+  .site-footer .brand { width: 210px; height: 72px; }
   .brand-text small { display: none; }
   .header-cta { gap: 10px; }
   .header-cta .btn--primary { padding: 10px 16px; font-size: .85rem; }
@@ -1125,8 +1125,8 @@ iframe { max-width: 100%; }
 /* Small phones (≤ 380px) — keep header from cramping */
 @media (max-width: 380px) {
   .header-cta .btn--primary { display: none; }
-  .brand { width: 140px; height: 36px; }
-  .site-footer .brand { width: 160px; height: 44px; }
+  .brand { width: 138px; height: 46px; }
+  .site-footer .brand { width: 180px; height: 62px; }
   .container { padding: 0 14px; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
   .hero-stat:last-child { grid-column: span 2; text-align: left; }

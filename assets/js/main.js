@@ -49,21 +49,31 @@
 
 // Hero cross-fade carousel
 // Markup: <div class="hero-bg" data-hero-carousel data-interval="3000">
-//   <img class="hero-bg__img is-active" ...>
+//   <img class="hero-bg__img" ...>
 //   <img class="hero-bg__img" ...>
 //   ...
 // </div>
+// The inline boot script in index.html picks a random starting slide
+// BEFORE this file loads (so there is no flash of slide 1). This file
+// then picks up the current active slide and rotates from there.
 (function () {
   const carousel = document.querySelector('[data-hero-carousel]');
   if (!carousel) return;
   const slides = carousel.querySelectorAll('.hero-bg__img');
   if (slides.length < 2) return;
 
-  // Respect prefers-reduced-motion: hold on slide 1.
+  // Find whichever slide the boot script (or fallback) activated.
+  let i = 0;
+  for (let n = 0; n < slides.length; n++) {
+    if (slides[n].classList.contains('is-active')) { i = n; break; }
+  }
+  // No slide active yet? Activate the first one.
+  if (!slides[i].classList.contains('is-active')) slides[i].classList.add('is-active');
+
+  // Respect prefers-reduced-motion — show the active slide and stop.
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const interval = parseInt(carousel.getAttribute('data-interval'), 10) || 3000;
-  let i = 0;
   setInterval(function () {
     slides[i].classList.remove('is-active');
     i = (i + 1) % slides.length;

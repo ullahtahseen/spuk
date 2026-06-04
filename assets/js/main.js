@@ -46,3 +46,27 @@
   const el = document.getElementById('year');
   if (el) el.textContent = new Date().getFullYear();
 })();
+
+// Hero cross-fade carousel
+// Markup: <div class="hero-bg" data-hero-carousel data-interval="3000">
+//   <img class="hero-bg__img is-active" ...>
+//   <img class="hero-bg__img" ...>
+//   ...
+// </div>
+(function () {
+  const carousel = document.querySelector('[data-hero-carousel]');
+  if (!carousel) return;
+  const slides = carousel.querySelectorAll('.hero-bg__img');
+  if (slides.length < 2) return;
+
+  // Respect prefers-reduced-motion: hold on slide 1.
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const interval = parseInt(carousel.getAttribute('data-interval'), 10) || 3000;
+  let i = 0;
+  setInterval(function () {
+    slides[i].classList.remove('is-active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('is-active');
+  }, interval);
+})();

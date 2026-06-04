@@ -1179,21 +1179,36 @@ iframe { max-width: 100%; }
   position: absolute;
   inset: 0;
   z-index: 0;
+  background: var(--color-navy-dark);
 }
-.hero--photo .hero-bg img {
+.hero--photo .hero-bg img,
+.hero--photo .hero-bg__img {
+  position: absolute;
+  inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center;
 }
+/* Carousel cross-fade — only the .is-active slide is visible. */
+.hero--photo .hero-bg__img {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  will-change: opacity;
+}
+.hero--photo .hero-bg__img.is-active { opacity: 1; }
+
 .hero--photo .hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  /* Heavier left-side darkening so the headline reads cleanly over
-     bright monitor walls in the CCTV hero photo. */
+  z-index: 1;
+  pointer-events: none;
+  /* Heavy left-side darkening so the headline + lede stay readable
+     across the full carousel — some slides have bright skies, others
+     have hi-vis vests, so this overlay has to hold up everywhere. */
   background:
-    linear-gradient(100deg, rgba(6, 24, 48, 0.86) 0%, rgba(10, 37, 64, 0.62) 45%, rgba(10, 37, 64, 0.30) 100%),
-    linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.00) 35%, rgba(0,0,0,0.45) 100%);
+    linear-gradient(100deg, rgba(6, 24, 48, 0.88) 0%, rgba(10, 37, 64, 0.66) 45%, rgba(10, 37, 64, 0.38) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.00) 35%, rgba(0,0,0,0.50) 100%);
 }
 .hero--photo .container { position: relative; z-index: 1; padding-top: 80px; padding-bottom: 80px; }
 .hero--photo .hero-eyebrow {

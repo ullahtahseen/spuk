@@ -1,4 +1,4 @@
-// Mobile nav toggle
+﻿// Mobile nav toggle
 (function () {
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav');
@@ -37,7 +37,7 @@
     const lines = [];
     data.forEach(function (val, key) { lines.push(key + ': ' + val); });
     const body = encodeURIComponent(lines.join('\n'));
-    window.location.href = 'mailto:info@securityprojectsltd.co.uk?subject=' + subject + '&body=' + body;
+    window.location.href = 'mailto:info@securityprojects.uk?subject=' + subject + '&body=' + body;
   });
 })();
 

@@ -36,7 +36,6 @@ After deploy, attach `securityprojectsltd.co.uk` (and `www.`) in Vercel → Proj
 /
 ├── index.html              # Homepage
 ├── about.html
-├── team.html
 ├── sectors.html
 ├── testimonials.html
 ├── careers.html

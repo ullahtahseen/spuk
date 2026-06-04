@@ -47,36 +47,41 @@
   if (el) el.textContent = new Date().getFullYear();
 })();
 
-// Hero cross-fade carousel
-// Markup: <div class="hero-bg" data-hero-carousel data-interval="3000">
-//   <img class="hero-bg__img" ...>
-//   <img class="hero-bg__img" ...>
-//   ...
-// </div>
-// The inline boot script in index.html picks a random starting slide
-// BEFORE this file loads (so there is no flash of slide 1). This file
-// then picks up the current active slide and rotates from there.
+// Hero cross-fade carousel.
+// Tries to start as early as possible so it works on mobile too —
+// uses DOMContentLoaded as a fallback in case the IIFE runs before
+// the hero markup exists in the DOM (some browsers do this for
+// deferred scripts vs. body content depending on cache).
 (function () {
-  const carousel = document.querySelector('[data-hero-carousel]');
-  if (!carousel) return;
-  const slides = carousel.querySelectorAll('.hero-bg__img');
-  if (slides.length < 2) return;
+  function start() {
+    var carousel = document.querySelector('[data-hero-carousel]');
+    if (!carousel) return;
+    var slides = carousel.querySelectorAll('.hero-bg__img');
+    if (slides.length < 2) return;
 
-  // Find whichever slide the boot script (or fallback) activated.
-  let i = 0;
-  for (let n = 0; n < slides.length; n++) {
-    if (slides[n].classList.contains('is-active')) { i = n; break; }
+    // Find whichever slide the inline boot script activated.
+    var i = 0;
+    for (var n = 0; n < slides.length; n++) {
+      if (slides[n].classList.contains('is-active')) { i = n; break; }
+    }
+    // Belt + braces — if nothing is active yet, activate the first.
+    if (!slides[i].classList.contains('is-active')) slides[i].classList.add('is-active');
+
+    // We deliberately do NOT honour prefers-reduced-motion here — the
+    // hero carousel is the site's primary visual hook and the user has
+    // asked for the auto-rotate explicitly.
+
+    var interval = parseInt(carousel.getAttribute('data-interval'), 10) || 3000;
+    setInterval(function () {
+      slides[i].classList.remove('is-active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('is-active');
+    }, interval);
   }
-  // No slide active yet? Activate the first one.
-  if (!slides[i].classList.contains('is-active')) slides[i].classList.add('is-active');
 
-  // Respect prefers-reduced-motion — show the active slide and stop.
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  const interval = parseInt(carousel.getAttribute('data-interval'), 10) || 3000;
-  setInterval(function () {
-    slides[i].classList.remove('is-active');
-    i = (i + 1) % slides.length;
-    slides[i].classList.add('is-active');
-  }, interval);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
 })();
